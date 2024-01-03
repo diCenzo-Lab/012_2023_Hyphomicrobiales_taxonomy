@@ -322,8 +322,8 @@ echo $best_model #GTR+F+I+R6
 iqtree2 -s total_16S_rRNA_sequences.clustalo.trimal.fasta -m $best_model --alrt 1000 -B 1000 -T 4 --prefix 16S_rRNA_gene_phylogeny.clustalo # Create the final phylogeny
 iqtree2 -s total_16S_rRNA_sequences.mafft.trimal.fasta -m MF -T 4 --prefix 16S_rRNA_mafft_model # Determine the best fit model and use it for the next step
 best_model=$(grep 'Best-fit' 16S_rRNA_mafft_model.log | cut -f3 -d' ')
-echo $best_model #GTR+F+I+R6
-iqtree2 -s total_16S_rRNA_sequences.mafft.trimal.fasta -m $best_model --alrt 1000 -B 1000 -T 4 --prefix 16S_rRNA_gene_phylogeny.mafft # Create the final phylogeny
+echo $best_model #SYM+I+R9 based on BIC, but as all others scoring methods had GTR+F+I_R6 as the best, went with this
+iqtree2 -s total_16S_rRNA_sequences.mafft.trimal.fasta -m GTR+F+I+R6 --alrt 1000 -B 1000 -T 4 --prefix 16S_rRNA_gene_phylogeny.mafft # Create the final phylogeny
 cd ../ # Change directory
 cp rRNA_phylogeny/16S_rRNA_gene_phylogeny.clustalo.treefile Output/Rhizobiales_rRNA_phylogeny_clustalo.treefile # Get untrimmed alignment
 cp rRNA_phylogeny/16S_rRNA_gene_phylogeny.mafft.treefile Output/Rhizobiales_rRNA_phylogeny_mafft.treefile # Get untrimmed alignment
