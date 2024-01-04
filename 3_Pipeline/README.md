@@ -1,4 +1,4 @@
-# Pipeline to assign organsisms to the correct family within the order *Hyphomicrobiales*
+# Pipeline to assign organisms to the correct family within the order *Hyphomicrobiales*
 A pipeline and reference protein sequence data for generating core-proteome alignment, inferring a maximum-likelihood phylogeny, and computing core-proteome amino-acid identity (cpAAI) values from bacterial genomes of the order *Hyphomicrobiales*, to assess their membership to an existing or a new family.
 
 ## Citation
