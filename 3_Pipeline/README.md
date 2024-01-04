@@ -6,7 +6,7 @@ These software and data are adapted from the software/data reported in the follo
 
 diCenzo GC, Yuqi Y, Young JPW, Kuzmanović N. 2023. **Refining the taxonomy of the order *Hyphomicrobiales* (*Rhizobiales*) based on whole genome comparisons of over 130 genus type strains** *bioRxiv*. [https://doi.org/10.1101/2023.11.15.567303]
 
-Kuzmanović N, Fagorzi C, Mengoni A, Lassalle F, diCenzo GC. 2021. **Taxonomy of Rhizobiaceae revisited: proposal of a new framework for genus delimitation.** *Int J Syst Evol Microbiol* 72(3):005243.
+Kuzmanović N, Fagorzi C, Mengoni A, Lassalle F, diCenzo GC. 2022. **Taxonomy of Rhizobiaceae revisited: proposal of a new framework for genus delimitation.** *Int J Syst Evol Microbiol* 72(3):005243.
 [https://doi.org/10.1099/ijsem.0.005243]
 
 ## Dependencies
