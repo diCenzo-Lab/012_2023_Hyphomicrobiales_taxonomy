@@ -11,6 +11,7 @@ Kuzmanović N, Fagorzi C, Mengoni A, Lassalle F, diCenzo GC. 2021. **Taxonomy of
 
 ## Dependencies
 - cpAAI_Rhizobiaceae [https://github.com/flass/cpAAI_Rhizobiaceae]
+	- the script `genome2cpAAI.py` must be on your path
 - Python 3 (recommended version >= 3.8.5), with package:
 	- Bio (BioPython) (recommended version >= 1.78)
 - NCBI Blast+ (recommended version >= 2.6.0+)
@@ -30,10 +31,14 @@ The script `hyphomicrobiales_family_assignment.sh` uses the `core_138` protein s
 
 ## Pipeline usage
 The script `hyphomicrobiales_family_assignment.sh` requires the following four inputs:
-- `-d` the full path to the directory containing the genome(s) to be classified. Genomes must be provided as whole genome nucleotide fasta files.
+- `-g` the full path to the directory containing the genome(s) to be classified. Genomes must be provided as whole genome nucleotide fasta files.
 - `-x` the extension (e.g., fna, fasta) of the file containing the genome sequence.
-- `-p` the full path to the data folder provided within this repository.
+- `-d` the full path to the data folder provided within this repository.
 - `-t` the maximum number of threads to use. We recommend not exceeding 8. 
+
+Prior to running the pipeline, ensure that the pipeline script `hyphomicrobiales_family_assignment.sh` and all the scripts in the folder `scripts` are on your path.
+
+The pipeline will produce two primary output files, while will be in the directory `Output_files`. The file `cpAAI_matrix.txt` contains pairwise cpAAI values between all genomes included in the dataset. The file `ML_phylogeny.treefile` will contain the maximum likelihood phylogeny. Two numbers will be given at each node. The first set of numbers are the SH-aLRT support values (%). The second set of numbers are the ultrafast jackknife support values (%).
 
 ## Data interpretation
 The cpAAI and phylogeny returned by the script can be used to assign organisms to the correct families within the order *Hyphomicrobiales* according to the framework described in our manuscript[https://doi.org/10.1101/2023.11.15.567303]. Briefly, we proposed a taxonomic framework in which *Hyphomicrobiales* families are defined as monophyletic groups what share pairwise average amino acid identity values above ~75% when calculated from core_138. Therefore, if your strain displays greater than approximately 75% cpAAI with an organism included in this dataset, and the strains are monophyletic, they likely belong to the same family. On the other hand, if your strain has less than 75% cpAAI with any other organism included in this dataset, it potentially belongs to a novel family.
