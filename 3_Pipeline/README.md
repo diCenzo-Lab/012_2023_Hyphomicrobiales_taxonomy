@@ -14,8 +14,6 @@ Kuzmanović N, Fagorzi C, Mengoni A, Lassalle F, diCenzo GC. 2021. **Taxonomy of
 - Python 3 (recommended version >= 3.8.5), with package:
 	- Bio (BioPython) (recommended version >= 1.78)
 - NCBI Blast+ (recommended version >= 2.6.0+)
-- Clustal Omega (recommended version >= 1.2.3)  
-  or
 - MAFFT (recommended version >= v7.487) (preferred)
 - IQ-TREE2 (recommended version >= 2.2.2.4)
 - R (recommended version >= 4.0.2), with package:
