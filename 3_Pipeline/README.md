@@ -2,7 +2,7 @@
 A pipeline and reference protein sequence data for generating core-proteome alignment, inferring a maximum-likelihood phylogeny, and computing core-proteome amino-acid identity (cpAAI) values from bacterial genomes of the order *Hyphomicrobiales*, to assess their membership to an existing or a new family.
 
 ## Citation
-These software and data are adapted from the software/data reported in the following two papers. If you find this pipeline useful, please cite these studies as well as the papers reporting the various dependencies described in the next section.
+These software and data are adapted from the software and data reported in the following two papers. If you find this pipeline useful, please cite these studies as well as the papers reporting the various dependencies described in the next section.
 
 diCenzo GC, Yuqi Y, Young JPW, Kuzmanović N. 2023. **Refining the taxonomy of the order *Hyphomicrobiales* (*Rhizobiales*) based on whole genome comparisons of over 130 genus type strains** *bioRxiv*. [https://doi.org/10.1101/2023.11.15.567303]
 
@@ -18,8 +18,9 @@ Kuzmanović N, Fagorzi C, Mengoni A, Lassalle F, diCenzo GC. 2022. **Taxonomy of
 - MAFFT (recommended version >= v7.487)
 - trimAl (recommended version >= v1.4.rev22)
 - IQ-TREE2 (recommended version >= 2.2.2.4)
-- R (recommended version >= 4.0.2), with package:
+- R (recommended version >= 4.0.2), with packages:
 	- phangorn
+	- ape
 
 ## Description
 The `data` folder contains reference marker protein sequence sets and their corresponding alignments for four sets of marker proteins used in our recent study of the order *Hyphomicrobiales*. These include:
