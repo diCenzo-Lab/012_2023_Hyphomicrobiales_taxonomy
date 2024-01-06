@@ -67,12 +67,12 @@ ls "$data_path"/perc95_138/aligned_sequences/*.fasta > Intermediate_files/perc95
 # Identify the core_138 proteins
 mkdir Intermediate_files/core_138_out
 mkdir Intermediate_files/core_138_tmp
-genome2cpAAI.py -q Intermediate_files/input_genome_list.txt -p Intermediate_files/core_138_protein_list.txt -A Intermediate_files/core_138_alignment_list.txt -o Intermediate_files/core_138_out --tmp_dir Intermediate_files/core_138_tmp --threads $thread_count
+genome2cpAAI.py -q Intermediate_files/input_genome_list.txt -p Intermediate_files/core_138_protein_list.txt -o Intermediate_files/core_138_out --tmp_dir Intermediate_files/core_138_tmp --threads $thread_count --aligner clustalo
 
 # Identify the perc95_138 proteins
 mkdir Intermediate_files/perc95_138_out
 mkdir Intermediate_files/perc95_138_tmp
-genome2cpAAI.py -q Intermediate_files/input_genome_list.txt -p Intermediate_files/perc95_138_protein_list.txt -A Intermediate_files/perc95_138_alignment_list.txt -o Intermediate_files/perc95_138_out --tmp_dir Intermediate_files/perc95_138_tmp --threads $thread_count
+genome2cpAAI.py -q Intermediate_files/input_genome_list.txt -p Intermediate_files/perc95_138_protein_list.txt -o Intermediate_files/perc95_138_out --tmp_dir Intermediate_files/perc95_138_tmp --threads $thread_count --aligner mafft
 grep '>' Intermediate_files/core_138_out/aligned_marker_prot_seqs/aligned_86377_gyrB.faaln | cut -f2 -d'>' | cut -f1 -d' ' | sort -u > Intermediate_files/perc95_138_out/species_list.txt
 mkdir Intermediate_files/perc95_138_out/aligned_marker_prot_seqs_trimmed/
 trimAlignments.pl

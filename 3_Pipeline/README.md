@@ -12,9 +12,10 @@ Kuzmanović N, Fagorzi C, Mengoni A, Lassalle F, diCenzo GC. 2022. **Taxonomy of
 ## Dependencies
 - cpAAI_Rhizobiaceae [https://github.com/flass/cpAAI_Rhizobiaceae]
 	- the script `genome2cpAAI.py` must be on your path
-- Python 3 (recommended version >= 3.8.5), with package:
+- Python 3 (recommended version >= 3.8.10), with package:
 	- Bio (BioPython) (recommended version >= 1.78)
 - NCBI Blast+ (recommended version >= 2.6.0+)
+- Clustal Omega (recommended version >= 1.2.4)
 - MAFFT (recommended version >= v7.487)
 - trimAl (recommended version >= v1.4.rev22)
 - IQ-TREE2 (recommended version >= 2.2.2.4)
