@@ -36,7 +36,8 @@ The script `hyphomicrobiales_family_assignment.sh` requires the following four i
 - `-g` the full path to the directory containing the genome(s) to be classified. Genomes must be provided as whole genome nucleotide fasta files.
 - `-x` the extension (e.g., fna, fasta) of the file containing the genome sequence.
 - `-d` the full path to the data folder provided within this repository.
-- `-t` the maximum number of threads to use. We recommend not exceeding 8. 
+- `-t` the number of threads to use for all steps except for IQTREE. 
+- `-i` the number of threads to use for IQTREE. We recommend a a maximum of 8 based on IQTREE multithreading efficiency measured on our computer. 
 
 Prior to running the pipeline, ensure that the pipeline script `hyphomicrobiales_family_assignment.sh` and all the scripts in the folder `scripts` are on your path.
 

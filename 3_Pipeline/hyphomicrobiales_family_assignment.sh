@@ -6,7 +6,8 @@ usage() {
   echo "  -g </path/to/genomes/>:       The full path to the directory containing the genome(s) to be classified. Genomes must be provided as whole genome nucleotide fasta files."
   echo "  -x <extension>:       The extension (e.g., fna, fasta) of the file containing the genome sequence. Generally, this will be either fna or fasta."
   echo "  -d </path/to/genomes/>:       The full path to the data folder provided in the same GitHub repository as this script."
-  echo "  -t </path/to/genomes/>:       The maximum number of threads to use. We recommend not exceeding 8.\n"
+  echo "  -t </path/to/genomes/>:       The number of threads to use for all steps except for IQTREE.\n"
+  echo "  -i </path/to/genomes/>:       The number of threads to use for IQTREE. We recommend a a maximum of 8 based on IQTREE multithreading efficiency measured on our computer.\n"
 }
 
 # Process command-line options
@@ -17,6 +18,7 @@ do
         x) extension=${OPTARG};;
         d) data_path=${OPTARG};;
         t) thread_count=${OPTARG};;
+        i) iqtree_threads=${OPTARG};;
   esac
 done
 
@@ -37,6 +39,11 @@ if [ -z $data_path ]; then
   exit 1
 fi
 if [ -z $thread_count ]; then
+  echo "\nError: Missing required arguments\n"
+  usage
+  exit 1
+fi
+if [ -z $iqtree_threads ]; then
   echo "\nError: Missing required arguments\n"
   usage
   exit 1
@@ -74,11 +81,11 @@ modifyAlignments.pl
 combineAlignments.pl Intermediate_files/perc95_138_out/species_list.txt Intermediate_files/perc95_138_out/aligned_marker_prot_seqs_modified/ > Intermediate_files/perc95_138_out/concatenated_marker_proteins.aln
 
 # Calculate cpAAI using core_138
-R compute_cpAAI.R
+Rscript compute_cpAAI.R
 mv cpAAI_matrix.txt Output_files/
 
 # Make phylogeny using perc95_138
 cd Intermediate_files/perc95_138_out/
-iqtree2 -s concatenated_marker_proteins.aln -m LG+F+I+R10 --alrt 1000 -J 1000 --jack-prop 0.4 -T 8 --prefix perc95_138_phylogeny
+iqtree2 -s concatenated_marker_proteins.aln -m LG+F+I+R10 --alrt 1000 -J 1000 --jack-prop 0.4 -T $iqtree_threads --prefix perc95_138_phylogeny
 cd ../..
 cp Intermediate_files/perc95_138_out/perc95_138_phylogeny.treefile Output_files/ML_phylogeny.treefile
