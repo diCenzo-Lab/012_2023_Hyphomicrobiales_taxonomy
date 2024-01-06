@@ -1,7 +1,7 @@
 #!/bin/bash
 
 usage() {
-  echo "Usage: hyphomicrobiales_family_assignment.sh -g </path/to/genomes/> -x <extension> -d </path/to/data/> -t <num>"
+  echo "Usage: hyphomicrobiales_family_assignment.sh -g </path/to/genomes/> -x <extension> -d </path/to/data/> -t <num> -i <num>"
   echo "Required inputs:"
   echo "  -g </path/to/genomes/>:       The full path to the directory containing the genome(s) to be classified. Genomes must be provided as whole genome nucleotide fasta files."
   echo "  -x <extension>:       The extension (e.g., fna, fasta) of the file containing the genome sequence. Generally, this will be either fna or fasta."
@@ -11,7 +11,7 @@ usage() {
 }
 
 # Process command-line options
-while getopts g:x:d:t: flag
+while getopts g:x:d:t:i: flag
 do
   case "${flag}" in
         g) genome_path=${OPTARG};;
