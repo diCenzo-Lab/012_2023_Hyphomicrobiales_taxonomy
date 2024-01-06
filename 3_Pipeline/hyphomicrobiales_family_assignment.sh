@@ -81,7 +81,7 @@ modifyAlignments.pl
 combineAlignments.pl Intermediate_files/perc95_138_out/species_list.txt Intermediate_files/perc95_138_out/aligned_marker_prot_seqs_modified/ > Intermediate_files/perc95_138_out/concatenated_marker_proteins.aln
 
 # Calculate cpAAI using core_138
-Rscript compute_cpAAI.R
+compute_cpAAI.R
 mv cpAAI_matrix.txt Output_files/
 
 # Make phylogeny using perc95_138
