@@ -26,8 +26,8 @@ Kuzmanović N, Fagorzi C, Mengoni A, Lassalle F, diCenzo GC. 2022. **Taxonomy of
 The `data` folder contains reference marker protein sequence sets and their corresponding alignments for four sets of marker proteins used in our recent study of the order *Hyphomicrobiales*. These include:
 - `core_143` a set of 19 non-recombining core protein markers present in 100% of a set of 143 genomes (138 *Hyphomicrobiales* genomes and 5 *Caulobacterales* genomes)
 - `core_138` a set of 59 non-recombining core protein markers present in 100% of a set of 138 genomes (133 *Hyphomicrobiales* genomes and 5 *Caulobacterales* genomes)
-- `perc95_143` a set of 256 protein markers present in ≥95% of a set of 143 genomes (138 *Hyphomicrobiales* genomes and 5 *Caulobacterales* genomes)
-- `perc95_138` a set of 267 protein markers present in ≥95% of a set of 138 genomes (133 *Hyphomicrobiales* genomes and 5 *Caulobacterales* genomes)
+- `perc95_143` a set of 256 protein markers present in >=95% of a set of 143 genomes (138 *Hyphomicrobiales* genomes and 5 *Caulobacterales* genomes)
+- `perc95_138` a set of 267 protein markers present in >=95% of a set of 138 genomes (133 *Hyphomicrobiales* genomes and 5 *Caulobacterales* genomes)
 
 The script `hyphomicrobiales_family_assignment.sh` uses the `core_138` protein set to calculate cpAAI between user provided genomes and the 138 genomes included in our original dataset as desribed at [https://github.com/flass/cpAAI_Rhizobiaceae]. It additionally uses the `perc95_138` protein set to infer a maximum likelihood phylogeny that includes user provided genomes and the 138 genomes included in our original dataset, using the LG+F+I+R10 model.
 
